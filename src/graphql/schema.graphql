@@ -1,0 +1,59 @@
+type ClassicLinkType {
+  title: String!
+  url: String!
+}
+
+enum StatusOfShow {
+  SOLD_OUT
+  NOT_ON_SALE
+  ON_SALE
+}
+
+type ShowsLinkType {
+  status: StatusOfShow!
+  date: String!
+  venue: String!
+}
+
+enum MusicPlayerType {
+  SPOTIFY
+  APPLE_MUSIC
+  SOUND_CLOUD
+}
+
+type MusicPlayerLinkType {
+  url: String!
+  playerType: MusicPlayerType!
+}
+
+type ArtistLinkTypes {
+  classics: [ClassicLinkType]!
+  shows: [ShowsLinkType]!
+  musicPlayers: [MusicPlayerLinkType]!
+}
+
+type Query {
+  artistLinks(artistId: String!): ArtistLinkTypes
+}
+
+input ClassicLinkInput {
+  title: String!
+  url: String!
+}
+
+input MusicPlayerLinkInput {
+  url: String!
+  playerType: MusicPlayerType!
+}
+
+input ShowsLinkInput {
+  status: StatusOfShow!
+  date: String!
+  venue: String!
+}
+
+type Mutation {
+  createClassicLink(artistId: String!, classicLink: ClassicLinkInput!): Int!
+  createMusicPlayerLink(artistId: String!, musicPlayerLink: MusicPlayerLinkInput!): Int!
+  createShowLink(artistId: String!, showLink: ShowsLinkInput!): Int!
+}

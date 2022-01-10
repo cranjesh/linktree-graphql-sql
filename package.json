@@ -1,0 +1,44 @@
+{
+  "name": "linktree-backend-takehome",
+  "version": "1.0.0",
+  "description": "<p align=\"center\">   <img src=\"https://github.com/blstrco/linktr.ee-backend-assessment/raw/master/Screen%20Shot%202019-07-08%20at%202.09.47%20pm.png\"> </p>",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node ./src/index.ts",
+    "dev": "nodemon --watch src --ignore '/*.test.ts' ./src/index.ts",
+    "clean": "rm -rf ./dist",
+    "build": "rm -rf ./dist && ./node_modules/.bin/tsc",
+    "graphql-gen-types": "graphql-codegen --config ./src/graphql/codegen.yml",
+    "test": "jest"
+  },
+  "author": "Linktree",
+  "devDependencies": {
+    "@graphql-codegen/cli": "2.3.1",
+    "@graphql-codegen/typescript": "2.4.2",
+    "@graphql-codegen/typescript-resolvers": "2.4.3",
+    "@types/jest": "^27.4.0",
+    "@types/sqlite3": "^3.1.8",
+    "@typescript-eslint/eslint-plugin": "^5.5.0",
+    "@typescript-eslint/parser": "^5.5.0",
+    "eslint": "^8.4.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "ts-jest": "^26.5.6",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  },
+  "dependencies": {
+    "apollo-server-core": "^3.6.0",
+    "apollo-server-express": "^3.6.0",
+    "express": "^4.17.2",
+    "express-graphql": "^0.12.0",
+    "graphql": "^16.2.0",
+    "graphql-fields": "^2.0.3",
+    "knex": "^0.95.15",
+    "reflect-metadata": "^0.1.13",
+    "sqlite3": "^5.0.2"
+  }
+}
